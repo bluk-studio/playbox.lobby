@@ -33,8 +33,15 @@ platform:
   arch: arm64
 
 steps:
-  - name: Install werf
-    image:
+  - name: Get git commit tag
+    image: alpine
+    commands:
+      - apk add git
+      - git rev-parse --short HEAD > .tag
+      - cat .tag
+  - name: Execute werf converge
+    image: alpine
+
 
 depends_on:
   - build_image

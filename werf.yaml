@@ -2,6 +2,6 @@ configVersion: 1
 project: playbox-lobby
 
 ---
-image: lobby
+image: git.odzi.dog/playbox/lobby:{{ .Files.Get ".tag" }}
 context: .
 dockerfile: Dockerfile
