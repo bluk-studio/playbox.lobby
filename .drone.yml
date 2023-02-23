@@ -7,7 +7,11 @@ platform:
   arch: arm64
 
 steps:
-  - name: docker
+  - name: Get git commit tag
+    image: alpine
+    commands:
+      - git rev-parse --short HEAD > .tags
+  - name: Build and push
     image: plugins/docker
     settings:
       registry:
@@ -17,5 +21,3 @@ steps:
       password:
         from_secret: REGISTRY_PASSWORD
       repo: playbox/lobby
-      tags: latest
-      dry_run: true
