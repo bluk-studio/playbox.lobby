@@ -1,14 +1,21 @@
 kind: pipeline
 type: docker
-name: Test pipeline
+name: Build image
 
 platform:
   os: linux
   arch: arm64
 
 steps:
-- name: greeting
-  image: alpine
-  commands:
-  - echo hello
-  - echo world
+  - name: docker
+    image: plugins/docker
+    settings:
+      registry:
+        from_secret: REGISTRY_URL
+      username:
+        from_secret: REGISTRY_USERNAME
+      password:
+        from_secret: REGISTRY_PASSWORD
+      repo: playbox/lobby
+      tags: latest
+      dry_run: true
