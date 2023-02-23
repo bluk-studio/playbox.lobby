@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: Build image
+name: build_image
 
 platform:
   os: linux
@@ -22,3 +22,19 @@ steps:
       password:
         from_secret: REGISTRY_PASSWORD
       repo: git.odzi.dog/playbox/lobby
+
+---
+kind: pipeline
+type: docker
+name: deploy_production
+
+platform:
+  os: linux
+  arch: arm64
+
+steps:
+  - name: Install werf
+    image:
+
+depends_on:
+  - build_image

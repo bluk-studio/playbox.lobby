@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44aacfe8-7c15-40a8-b72c-b73f574ee9d5" name="Changes" comment="Add test resourcepack, update lobby instance, add abstract InstanceEvents and resourcepack builder funcionality" />
+    <list default="true" id="44aacfe8-7c15-40a8-b72c-b73f574ee9d5" name="Changes" comment="Playing with build image pipeline (5/-)">
+      <change afterPath="$PROJECT_DIR$/werf.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.drone.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.drone.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,20 +49,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/dogleash/Desktop/playbox/next/lobby/src/main/resources/textures/other/badges",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/dogleash/Desktop/playbox/next/lobby/src/main/resources/textures/other/badges&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/textures/other/badges" />
@@ -80,6 +84,7 @@
       <updated>1677074268989</updated>
       <workItem from="1677074272606" duration="655000" />
       <workItem from="1677145891277" duration="6006000" />
+      <workItem from="1677177393467" duration="2835000" />
     </task>
     <task id="LOCAL-00001" summary="Add test resourcepack, update lobby instance, add abstract InstanceEvents and resourcepack builder funcionality">
       <created>1677151763743</created>
@@ -88,7 +93,49 @@
       <option name="project" value="LOCAL" />
       <updated>1677151763743</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Remove Dockerfile, update idea's workspace config">
+      <created>1677177548521</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677177548521</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Playing with build image pipeline">
+      <created>1677178068068</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677178068068</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Playing with build image pipeline (2/-)">
+      <created>1677178961024</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677178961024</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Playing with build image pipeline (3/-)">
+      <created>1677179020906</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677179020906</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Playing with build image pipeline (4/-)">
+      <created>1677179470425</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677179470426</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Playing with build image pipeline (5/-)">
+      <created>1677179934358</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677179934358</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,6 +143,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add test resourcepack, update lobby instance, add abstract InstanceEvents and resourcepack builder funcionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add test resourcepack, update lobby instance, add abstract InstanceEvents and resourcepack builder funcionality" />
+    <MESSAGE value="Remove Dockerfile, update idea's workspace config" />
+    <MESSAGE value="Playing with build image pipeline" />
+    <MESSAGE value="Playing with build image pipeline (2/-)" />
+    <MESSAGE value="Playing with build image pipeline (3/-)" />
+    <MESSAGE value="Playing with build image pipeline (4/-)" />
+    <MESSAGE value="Playing with build image pipeline (5/-)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Playing with build image pipeline (5/-)" />
   </component>
 </project>

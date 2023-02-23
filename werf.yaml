@@ -1,0 +1,7 @@
+configVersion: 1
+project: playbox-lobby
+
+---
+image: lobby
+context: .
+dockerfile: Dockerfile
