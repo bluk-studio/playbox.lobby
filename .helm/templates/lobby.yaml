@@ -14,4 +14,5 @@ spec:
         app: lobby
     spec:
       containers:
-        - image: {{ $.Values.werf.image.lobby }}
+        - name: lobby
+          image: {{ $.Values.werf.image.lobby }}

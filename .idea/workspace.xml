@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44aacfe8-7c15-40a8-b72c-b73f574ee9d5" name="Changes" comment="Playing with build image pipeline (5/-)">
-      <change afterPath="$PROJECT_DIR$/.helm/templates/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.helm/templates/lobby.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.helm/values.yaml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/werf.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.drone.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.drone.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -85,7 +86,7 @@
       <updated>1677074268989</updated>
       <workItem from="1677074272606" duration="655000" />
       <workItem from="1677145891277" duration="6006000" />
-      <workItem from="1677177393467" duration="3534000" />
+      <workItem from="1677177393467" duration="4023000" />
     </task>
     <task id="LOCAL-00001" summary="Add test resourcepack, update lobby instance, add abstract InstanceEvents and resourcepack builder funcionality">
       <created>1677151763743</created>
