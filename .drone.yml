@@ -16,9 +16,9 @@ steps:
   - name: Build and push
     image: plugins/docker
     settings:
-      registry: "git.odzi.dog"
+      registry: git.odzi.dog
       username:
         from_secret: REGISTRY_USERNAME
       password:
         from_secret: REGISTRY_PASSWORD
-      repo: playbox/lobby
+      repo: git.odzi.dog/playbox/lobby
