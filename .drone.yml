@@ -10,7 +10,9 @@ steps:
   - name: Get git commit tag
     image: alpine
     commands:
+      - apk add git
       - git rev-parse --short HEAD > .tags
+      - cat .tags
   - name: Build and push
     image: plugins/docker
     settings:
