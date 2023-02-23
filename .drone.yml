@@ -16,8 +16,7 @@ steps:
   - name: Build and push
     image: plugins/docker
     settings:
-      registry:
-        from_secret: REGISTRY_URL
+      registry: "git.odzi.dog"
       username:
         from_secret: REGISTRY_USERNAME
       password:
