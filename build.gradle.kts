@@ -40,6 +40,8 @@ tasks {
         useJUnitPlatform()
     }
     shadowJar {
+        archiveName = "server.jar"
+        
         mergeServiceFiles()
         archiveClassifier.set("") // Prevent the -all suffix
     }
