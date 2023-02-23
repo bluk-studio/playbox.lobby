@@ -4,7 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44aacfe8-7c15-40a8-b72c-b73f574ee9d5" name="Changes" comment="" />
+    <list default="true" id="44aacfe8-7c15-40a8-b72c-b73f574ee9d5" name="Changes" comment="Add test resourcepack, update lobby instance, add abstract InstanceEvents and resourcepack builder funcionality">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/ResourcePackServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/instances/lobby/events/PlayerSpawn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/resourcepack/Packs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/resourcepack/bits/Badges.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/resourcepack/bits/HotbarButtons.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/resourcepack/bits/TextureOverwrites.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/utils/InstanceEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/utils/InstanceUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/utils/ResourcePackBit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/utils/ResourcePackUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/gui/hotbar/account_button/active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/gui/hotbar/account_button/unactive.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/gui/hotbar/admin_button/active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/gui/hotbar/admin_button/unactive.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/gui/hotbar/more_button/active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/gui/hotbar/more_button/unactive.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/gui/hotbar/mouse_scroll_tooltip.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/gui/hotbar/play_button/active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/gui/hotbar/play_button/unactive.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/gui/rewrites/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/gui/rewrites/widgets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/other/badges/admin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/other/badges/media_twitch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/other/badges/moder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/other/badges/player.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/other/badges/vip.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/instances/Lobby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/instances/Lobby.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +45,25 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,6 +81,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/dogleash/Desktop/playbox/next/lobby/src/main/resources/textures/other/badges",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -39,6 +90,17 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/textures/other/badges" />
+      <recent name="$PROJECT_DIR$/src/main/resources/textures/gui/hotbar" />
+      <recent name="$PROJECT_DIR$/src/main/resources/textures/gui/rewrites" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/textures" />
+      <recent name="$PROJECT_DIR$/src/main/resources/textures/gui" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,10 +110,15 @@
       <option name="presentableId" value="Default" />
       <updated>1677074268989</updated>
       <workItem from="1677074272606" duration="655000" />
+      <workItem from="1677145891277" duration="5705000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add test resourcepack, update lobby instance, add abstract InstanceEvents and resourcepack builder funcionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add test resourcepack, update lobby instance, add abstract InstanceEvents and resourcepack builder funcionality" />
   </component>
 </project>

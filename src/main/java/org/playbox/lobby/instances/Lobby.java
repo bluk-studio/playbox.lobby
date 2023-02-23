@@ -5,6 +5,7 @@ import net.minestom.server.instance.AnvilLoader;
 import net.minestom.server.instance.Instance;
 import net.minestom.server.instance.WorldBorder;
 import net.minestom.server.world.DimensionType;
+import org.playbox.lobby.utils.InstanceUtils;
 
 import java.nio.file.Path;
 
@@ -28,6 +29,9 @@ public class Lobby {
             border.setCenterZ(0);
             border.setDiameter(250.0);
         }
+
+        // Initializing events using reflections
+        InstanceUtils.initializeEvents("org.playbox.lobby.instances.lobby", instance);
 
         INSTANCE = instance;
     }
