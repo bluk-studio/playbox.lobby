@@ -1,18 +1,33 @@
+{{ range $i, $e := until (int $.Values.replicas) }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: lobby
-  namespace: bluk-playbox
+  name: lobby-{{ $i }}
 spec:
-  replicas: {{ $.Values.replicas }}
   selector:
     matchLabels:
-      app: lobby
+      app: lobby-{{ $i }}
   template:
     metadata:
       labels:
-        app: lobby
+        app: lobby-{{ $i }}
     spec:
       containers:
         - name: lobby
-          image: {{ $.Values.werf.image.lobby }}
+          image: {{ $.Values.image }}:{{ $.Values.tag }}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lobby-{{ $i }}
+spec:
+  type: ClusterIP
+  ports:
+  - port: 25565
+    targetPort: 25565
+    protocol: TCP
+    name: entrypoint
+  selector:
+    app: lobby-{{ $i }}
+{{ end }}
