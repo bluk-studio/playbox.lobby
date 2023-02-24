@@ -37,16 +37,24 @@ steps:
     image: alpine
     commands:
       - apk add git
+      - git config --global --add safe.directory '*'
       - git rev-parse --short HEAD > .tag
       - cat .tag
   - name: Upgrade our helm chart with new tag
-    image: alpine/k8s:1.23.16
+    image: alpine/k8s:1.26.1
     environment:
       KUBECONFIG_DATA:
         from_secret: KUBECONFIG_DATA
     commands:
-      - kubectl version --short
-      - kubectl get namespaces --kubeconfig <(echo $KUBECONFIG_DATA)
+      - mkdir ~/.kube
+      - echo $${KUBECONFIG_DATA} | base64 -d > ~/.kube/config
+      - export KUBECONFIG=~/.kube/config
+      - kubectl version
+      
+      # Deploying our helm release with new tag value
+      - export TAG=$(cat .tag)
+      - "echo Installing with tag: $TAG"
+      - helm upgrade playbox-lobby ./.helm --set-string tag=$TAG
 
 depends_on:
   - build_image
