@@ -39,9 +39,14 @@ steps:
       - apk add git
       - git rev-parse --short HEAD > .tag
       - cat .tag
-  - name: Execute werf deploy
-    image: alpine
-
+  - name: Upgrade our helm chart with new tag
+    image: alpine/k8s:1.23.16
+    environment:
+      KUBECONFIG_DATA:
+        from_secret: KUBECONFIG_DATA
+    commands:
+      - echo $KUBECONFIG_DATA > ~/.kube/config
+      - kubectl get namespaces
 
 depends_on:
   - build_image

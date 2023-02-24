@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lobby
+  namespace: bluk-playbox
+spec:
+  replicas: {{ $.Values.replicas }}
+  selector:
+    matchLabels:
+      app: lobby
+  template:
+    metadata:
+      labels:
+        app: lobby
+    spec:
+      containers:
+        - name: lobby
+          image: {{ $.Values.werf.image.lobby }}
