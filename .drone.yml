@@ -19,9 +19,7 @@ steps:
       KUBECONFIG_DATA:
         from_secret: KUBECONFIG_DATA
     commands:
-      - mkdir ~/.kube
-      - echo $KUBECONFIG_DATA > ~/.kube/config
-      - kubectl get namespaces
+      - kubectl --kubeconfig <(echo $KUBECONFIG_DATA)> get namespaces
 
 # depends_on:
 #   - build_image
