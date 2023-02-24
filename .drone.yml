@@ -23,5 +23,5 @@ steps:
       - echo $KUBECONFIG_DATA > ~/.kube/config
       - kubectl get namespaces
 
-depends_on:
-  - build_image
+# depends_on:
+#   - build_image
