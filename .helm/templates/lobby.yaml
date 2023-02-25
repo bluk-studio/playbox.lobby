@@ -15,6 +15,9 @@ spec:
       containers:
         - name: lobby
           image: {{ $.Values.image }}:{{ $.Values.tag }}
+          env:
+            - name: "VELOCITY_FORWARDING_SECRET"
+              value: {{ $.Values.forwardingSecret }}
 
 ---
 apiVersion: v1

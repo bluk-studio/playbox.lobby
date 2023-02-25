@@ -29,7 +29,7 @@ public final class Server {
 
         // Configuring our server
         if (System.getenv().containsKey("VELOCITY_FORWARDING_SECRET")) {
-            Server.LOGGER.info("Enabling velocity proxy extension");
+            Server.LOGGER.info(String.format("Enabling velocity proxy extension with secret: %s", System.getenv("VELOCITY_FORWARDING_SECRET")));
             VelocityProxy.enable(System.getenv("VELOCITY_FORWARDING_SECRET"));
         };
 
