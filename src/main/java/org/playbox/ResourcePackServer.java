@@ -1,6 +1,6 @@
-package org.playbox.lobby;
+package org.playbox;
 
-import org.playbox.lobby.resourcepack.Packs;
+import org.playbox.resourcepack.Packs;
 
 import java.io.IOException;
 

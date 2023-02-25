@@ -1,6 +1,6 @@
-package org.playbox.lobby.utils;
+package org.playbox.utils;
 
-import org.playbox.lobby.Server;
+import org.playbox.Server;
 import org.reflections.Reflections;
 import team.unnamed.creative.base.Writable;
 import team.unnamed.creative.file.FileTree;

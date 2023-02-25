@@ -1,4 +1,4 @@
-package org.playbox.lobby.utils;
+package org.playbox.utils;
 
 public class InstanceEvent<T extends net.minestom.server.event.trait.InstanceEvent> {
     public Class<T> EVENT_CLASS;

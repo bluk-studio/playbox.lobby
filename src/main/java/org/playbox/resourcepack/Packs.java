@@ -1,6 +1,6 @@
-package org.playbox.lobby.resourcepack;
+package org.playbox.resourcepack;
 
-import org.playbox.lobby.utils.ResourcePackUtils;
+import org.playbox.utils.ResourcePackUtils;
 import team.unnamed.creative.ResourcePack;
 import team.unnamed.creative.metadata.Metadata;
 import team.unnamed.creative.metadata.PackMeta;

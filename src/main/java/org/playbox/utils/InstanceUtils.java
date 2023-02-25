@@ -1,7 +1,7 @@
-package org.playbox.lobby.utils;
+package org.playbox.utils;
 
 import net.minestom.server.instance.Instance;
-import org.playbox.lobby.Server;
+import org.playbox.Server;
 import org.reflections.Reflections;
 
 import java.util.Set;

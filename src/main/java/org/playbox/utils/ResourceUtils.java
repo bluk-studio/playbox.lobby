@@ -1,4 +1,4 @@
-package org.playbox.lobby.utils;
+package org.playbox.utils;
 
 import java.io.IOException;
 import java.net.URI;

@@ -4,7 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44aacfe8-7c15-40a8-b72c-b73f574ee9d5" name="Changes" comment="Add test resourcepack, update lobby instance, add abstract InstanceEvents and resourcepack builder funcionality" />
+    <list default="true" id="44aacfe8-7c15-40a8-b72c-b73f574ee9d5" name="Changes" comment="Remove werf config">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/HttpClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/instances/Limbo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/instances/limbo/commands/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/instances/limbo/events/BlockBreak.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/instances/limbo/events/PlayerSpawn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/services/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/services/ProfileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/utils/CommandUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playbox/utils/RequestBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/ResourcePackServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playbox/ResourcePackServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playbox/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/instances/Lobby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playbox/instances/Lobby.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/instances/lobby/events/PlayerSpawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playbox/instances/lobby/events/PlayerSpawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/resourcepack/Packs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playbox/resourcepack/Packs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/resourcepack/bits/Badges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playbox/resourcepack/bits/Badges.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/resourcepack/bits/HotbarButtons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playbox/resourcepack/bits/HotbarButtons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/resourcepack/bits/TextureOverwrites.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playbox/resourcepack/bits/TextureOverwrites.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/utils/InstanceEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playbox/utils/InstanceEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/utils/InstanceUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playbox/utils/InstanceUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/utils/ResourcePackBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playbox/utils/ResourcePackBit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/utils/ResourcePackUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playbox/utils/ResourcePackUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playbox/lobby/utils/ResourceUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playbox/utils/ResourceUtils.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,20 +70,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/dogleash/Desktop/playbox/next/lobby/src/main/resources/textures/other/badges",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/dogleash/Desktop/playbox/next/lobby/src/main/resources/textures/other/badges&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/textures/other/badges" />
@@ -80,6 +105,8 @@
       <updated>1677074268989</updated>
       <workItem from="1677074272606" duration="655000" />
       <workItem from="1677145891277" duration="6006000" />
+      <workItem from="1677177393467" duration="4350000" />
+      <workItem from="1677272925098" duration="4013000" />
     </task>
     <task id="LOCAL-00001" summary="Add test resourcepack, update lobby instance, add abstract InstanceEvents and resourcepack builder funcionality">
       <created>1677151763743</created>
@@ -88,7 +115,63 @@
       <option name="project" value="LOCAL" />
       <updated>1677151763743</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Remove Dockerfile, update idea's workspace config">
+      <created>1677177548521</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677177548521</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Playing with build image pipeline">
+      <created>1677178068068</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677178068068</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Playing with build image pipeline (2/-)">
+      <created>1677178961024</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677178961024</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Playing with build image pipeline (3/-)">
+      <created>1677179020906</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677179020906</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Playing with build image pipeline (4/-)">
+      <created>1677179470425</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677179470426</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Playing with build image pipeline (5/-)">
+      <created>1677179934358</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677179934358</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add werf configuration, update deployment pipeline">
+      <created>1677181749924</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677181749924</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Remove werf config">
+      <created>1677272972463</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677272972463</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,6 +179,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add test resourcepack, update lobby instance, add abstract InstanceEvents and resourcepack builder funcionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add test resourcepack, update lobby instance, add abstract InstanceEvents and resourcepack builder funcionality" />
+    <MESSAGE value="Remove Dockerfile, update idea's workspace config" />
+    <MESSAGE value="Playing with build image pipeline" />
+    <MESSAGE value="Playing with build image pipeline (2/-)" />
+    <MESSAGE value="Playing with build image pipeline (3/-)" />
+    <MESSAGE value="Playing with build image pipeline (4/-)" />
+    <MESSAGE value="Playing with build image pipeline (5/-)" />
+    <MESSAGE value="Add werf configuration, update deployment pipeline" />
+    <MESSAGE value="Remove werf config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove werf config" />
   </component>
 </project>

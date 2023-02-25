@@ -1,11 +1,13 @@
-package org.playbox.lobby;
+package org.playbox;
 
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.coordinate.Pos;
 import net.minestom.server.event.GlobalEventHandler;
 import net.minestom.server.event.player.PlayerLoginEvent;
-import org.playbox.lobby.instances.Lobby;
-import org.playbox.lobby.utils.ResourceUtils;
+import net.minestom.server.extras.velocity.VelocityProxy;
+import org.playbox.instances.Limbo;
+import org.playbox.utils.CommandUtils;
+import org.playbox.utils.ResourceUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,17 +28,23 @@ public final class Server {
         }
 
         // Configuring our server
-        // VelocityProxy.enable("vwIiIPs6iqAp");
+        if (System.getenv().containsKey("VELOCITY_FORWARDING_SECRET")) {
+            Server.LOGGER.info("Enabling velocity proxy extension");
+            VelocityProxy.enable(System.getenv("VELOCITY_FORWARDING_SECRET"));
+        };
 
         // > Handlers
         {
             GlobalEventHandler handler = MinecraftServer.getGlobalEventHandler();
 
             handler.addListener(PlayerLoginEvent.class, event -> {
-                event.setSpawningInstance(Lobby.INSTANCE);
-                event.getPlayer().setRespawnPoint(new Pos(0, 157, 0));
+                event.setSpawningInstance(Limbo.INSTANCE);
+                event.getPlayer().setRespawnPoint(new Pos(48.5, 147, -2));
             });
         }
+
+        // > Initializing commands
+        CommandUtils.initializeCommands();
 
         // Starting server
         server.start("0.0.0.0", 25565);

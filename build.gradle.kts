@@ -13,6 +13,7 @@ repositories {
 }
 
 dependencies {
+    implementation("com.sendgrid:java-http-client:4.5.1")
     implementation("org.reflections:reflections:0.10.2")
     implementation("team.unnamed:creative-api:0.4.1-SNAPSHOT")
     implementation("team.unnamed:creative-server:0.3.0-SNAPSHOT")

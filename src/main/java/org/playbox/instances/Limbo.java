@@ -1,15 +1,15 @@
-package org.playbox.lobby.instances;
+package org.playbox.instances;
 
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.instance.AnvilLoader;
 import net.minestom.server.instance.Instance;
 import net.minestom.server.instance.WorldBorder;
 import net.minestom.server.world.DimensionType;
-import org.playbox.lobby.utils.InstanceUtils;
+import org.playbox.utils.InstanceUtils;
 
 import java.nio.file.Path;
 
-public class Lobby {
+public class Limbo {
     public static final Instance INSTANCE;
 
     static {
@@ -31,7 +31,7 @@ public class Lobby {
         }
 
         // Initializing events using reflections
-        InstanceUtils.initializeEvents("org.playbox.lobby.instances.lobby", instance);
+        InstanceUtils.initializeEvents("org.playbox.instances.limbo.events", instance);
 
         INSTANCE = instance;
     }

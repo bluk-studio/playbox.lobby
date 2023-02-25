@@ -1,4 +1,4 @@
-package org.playbox.lobby.utils;
+package org.playbox.utils;
 
 import team.unnamed.creative.file.FileTree;
 
