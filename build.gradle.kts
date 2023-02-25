@@ -31,7 +31,7 @@ java {
 tasks {
     jar {
         manifest {
-            attributes["Main-Class"] = "org.playbox.lobby.Server"
+            attributes["Main-Class"] = "org.playbox.Server"
         }
     }
     build {
