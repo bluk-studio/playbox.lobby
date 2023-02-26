@@ -15,6 +15,6 @@ public class Packs {
         );
 
         // Initializing Lobby Resourcepack's bits
-        ResourcePackUtils.initializeBits("org.playbox.lobby.resourcepack.bits", tree);
+        ResourcePackUtils.initializeBits("org.playbox.resourcepack.bits", tree);
     });
 }

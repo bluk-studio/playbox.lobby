@@ -5,16 +5,32 @@ import com.google.gson.JsonParser;
 import com.sendgrid.Method;
 import com.sendgrid.Request;
 import com.sendgrid.Response;
+import net.minestom.server.entity.Player;
 import org.playbox.HttpClient;
 import org.playbox.Server;
+import org.playbox.managers.PlayerManager;
 import org.playbox.utils.RequestBuilder;
 
 public class ProfileService {
-    public static boolean doProfileExists(String nickname) {
+    public static boolean doProfileExists(Player player) {
+        if (ProfileService.doProfileExistsByUsername(player.getUsername())) {
+            PlayerManager.getByUUID(player.getUuid()).setIsRegistered(true);
+
+            return true;
+        } else {
+            PlayerManager.getByUUID(player.getUuid()).setIsRegistered(false);
+
+            return false;
+        }
+    };
+
+    // P.S.
+    // Try not to use this method very often.
+    public static boolean doProfileExistsByUsername(String username) {
         Request request = new RequestBuilder()
                 .withEndpoint("/api/collections/users/records")
-                .setMethod(Method.GET)
-                .addQueryParam("filter", String.format("(username=\"%s\")", nickname))
+                .withMethod(Method.GET)
+                .addQueryParam("filter", String.format("(username=\"%s\")", username))
                 .asRequest();
 
         try {

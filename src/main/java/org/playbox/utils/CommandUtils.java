@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class CommandUtils {
     public static void initializeCommands() {
-        Reflections reflections = new Reflections("org.playbox.lobby");
+        Reflections reflections = new Reflections("org.playbox");
         Set<Class<? extends Command>> commands = reflections.getSubTypesOf(Command.class);
 
         commands.forEach(commandClass -> {

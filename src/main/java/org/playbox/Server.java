@@ -2,10 +2,12 @@ package org.playbox;
 
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.coordinate.Pos;
+import net.minestom.server.entity.Player;
 import net.minestom.server.event.GlobalEventHandler;
 import net.minestom.server.event.player.PlayerLoginEvent;
 import net.minestom.server.extras.velocity.VelocityProxy;
 import org.playbox.instances.Limbo;
+import org.playbox.managers.PlayerManager;
 import org.playbox.utils.CommandUtils;
 import org.playbox.utils.ResourceUtils;
 import org.slf4j.Logger;
@@ -38,8 +40,13 @@ public final class Server {
             GlobalEventHandler handler = MinecraftServer.getGlobalEventHandler();
 
             handler.addListener(PlayerLoginEvent.class, event -> {
+                Player player = event.getPlayer();
+
+                // Adding this player to PlayerManager
+                PlayerManager.initializePlayer(player);
+
                 event.setSpawningInstance(Limbo.INSTANCE);
-                event.getPlayer().setRespawnPoint(new Pos(48.5, 147, -2));
+                player.setRespawnPoint(new Pos(48.5, 147, -2));
             });
         }
 

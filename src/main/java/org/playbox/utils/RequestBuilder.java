@@ -22,8 +22,13 @@ public class RequestBuilder {
         return this;
     };
 
-    public RequestBuilder setMethod(Method method) {
+    public RequestBuilder withMethod(Method method) {
         this.request.setMethod(method);
+        return this;
+    };
+
+    public RequestBuilder withBody(String body) {
+        this.request.setBody(body);
         return this;
     };
 
