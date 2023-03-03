@@ -44,13 +44,13 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: lobby-{{ i }}
+  name: lobby-{{ $i }}
 spec:
   entryPoints:
     - web
     - websecure
   routes:
-    - match: Host(`resourcepack.{{ lobby-$i }}.playbox.k8s.odzi.dog`)
+    - match: Host(`resourcepack.lobby-{{ $i }}.playbox.k8s.odzi.dog`)
       kind: Rule
       services:
         - name: lobby-{{ $i }}
