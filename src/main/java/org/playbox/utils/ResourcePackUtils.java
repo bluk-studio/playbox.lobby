@@ -10,10 +10,14 @@ import java.net.URISyntaxException;
 import java.util.Set;
 
 public class ResourcePackUtils {
-    public static Writable getResourceWritable(String resource) throws URISyntaxException {
-        return Writable.file(new File(
-                Server.class.getClassLoader().getResource(resource).toURI()
-        ));
+    public static Writable getResourceWritable(String resource) {
+        try {
+            return Writable.file(new File(
+                    Server.class.getClassLoader().getResource(resource).toURI()
+            ));
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
     };
 
     public static void initializeBits(String bitsPackagePath, FileTree tree) {
