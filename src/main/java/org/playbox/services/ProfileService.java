@@ -13,15 +13,10 @@ import org.playbox.utils.RequestBuilder;
 
 public class ProfileService {
     public static boolean doProfileExists(Player player) {
-        if (ProfileService.doProfileExistsByUsername(player.getUsername())) {
-            PlayerManager.getByUUID(player.getUuid()).setIsRegistered(true);
+        boolean doProfileExists = ProfileService.doProfileExistsByUsername(player.getUsername());
 
-            return true;
-        } else {
-            PlayerManager.getByUUID(player.getUuid()).setIsRegistered(false);
-
-            return false;
-        }
+        PlayerManager.getByUUID(player.getUuid()).setIsRegistered(doProfileExists);
+        return doProfileExists;
     };
 
     // P.S.

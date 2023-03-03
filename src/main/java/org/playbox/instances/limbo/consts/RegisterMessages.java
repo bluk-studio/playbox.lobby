@@ -12,4 +12,20 @@ public class RegisterMessages {
                     "<newline>" +
                     " <gray>Если у вас возникли &nкакие-либо проблемы &7во время регистрации, то вы всегда можете обратиться к нам в дискорд по ссылке: <dark_gray>playbox.network/discord<newline>"
     );
+
+    public static final Component PROCESSING = MiniMessage.miniMessage().deserialize(
+            "processing"
+    );
+
+    public static final Component ERROR = MiniMessage.miniMessage().deserialize(
+            "error"
+    );
+
+    public static final Component PASSWORDS_DO_NOT_MATCH = MiniMessage.miniMessage().deserialize(
+            "do not match"
+    );
+
+    public static final Component NOT_REGISTERED = MiniMessage.miniMessage().deserialize(
+            "not registered"
+    );
 }

@@ -18,6 +18,8 @@ spec:
           env:
             - name: "VELOCITY_FORWARDING_SECRET"
               value: {{ $.Values.forwardingSecret }}
+            - name: "RESOURCEPACK_DOWNLOAD_LINK"
+              value: https://resourcepack.{{ lobby-$i }}.playbox.k8s.odzi.dog
 
 ---
 apiVersion: v1
@@ -31,6 +33,28 @@ spec:
     targetPort: 25565
     protocol: TCP
     name: entrypoint
+  - port: 25567
+    targetPort: 25567
+    protocol: TCP
+    name: resourcepack
   selector:
     app: lobby-{{ $i }}
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: lobby-{{ i }}
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: Host(`resourcepack.{{ lobby-$i }}.playbox.k8s.odzi.dog`)
+      kind: Rule
+      services:
+        - name: lobby-{{ $i }}
+          port: "resourcepack"
+  tls:
+    certResolver: "cloudflare"
 {{ end }}

@@ -1,21 +1,16 @@
 package org.playbox.instances.limbo.commands;
 
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.command.builder.Command;
 import net.minestom.server.command.builder.arguments.ArgumentType;
 import net.minestom.server.coordinate.Pos;
 import net.minestom.server.entity.Player;
-import net.minestom.server.timer.Scheduler;
-import net.minestom.server.timer.TaskSchedule;
 import org.playbox.instances.Lobby;
 import org.playbox.instances.Limbo;
 import org.playbox.instances.limbo.consts.LoginMessages;
 import org.playbox.instances.limbo.managers.RepeatableMessageManager;
 import org.playbox.managers.PlayerManager;
 import org.playbox.services.AuthService;
-import org.playbox.services.ProfileService;
 
 public class Login extends Command {
     public Login() {
@@ -37,7 +32,9 @@ public class Login extends Command {
 
             // Checking if this player is registered
             if (!PlayerManager.getByUUID(player.getUuid()).isRegistered) {
-                RepeatableMessageManager.setMessage(player, LoginMessages.NOT_REGISTERED, LoginMessages.REPEATABLE_MESSAGE);
+                // Getting current player message, because it either could be LoginMessages.REPEATABLE_MESSAGE
+                // or RegisterMessages.REPEATABLE_MESSAGE
+                RepeatableMessageManager.setMessage(player, LoginMessages.NOT_REGISTERED, RepeatableMessageManager.getPlayersCurrentMessage(player));
                 return;
             };
 

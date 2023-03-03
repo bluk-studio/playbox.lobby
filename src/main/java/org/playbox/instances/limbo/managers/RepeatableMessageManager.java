@@ -18,6 +18,13 @@ import java.util.UUID;
 public class RepeatableMessageManager {
     public static Map<UUID, ManagedPlayer> players = new HashMap<>();
 
+    public @Nullable static Component getPlayersCurrentMessage(Player player) {
+          if (players.get(player.getUuid()) == null) return null;
+          ManagedPlayer managedPlayer = players.get(player.getUuid());
+
+          return managedPlayer.getCurrentMessage();
+    };
+
     public static void setMessage(Player player, Component message, @Nullable Component returnToMessage) {
         // Checking if this player exists in our manager
         if (players.get(player.getUuid()) == null) {

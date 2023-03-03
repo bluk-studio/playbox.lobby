@@ -6,6 +6,7 @@ import net.minestom.server.entity.GameMode;
 import net.minestom.server.entity.Player;
 import net.minestom.server.event.instance.AddEntityToInstanceEvent;
 import net.minestom.server.resourcepack.ResourcePack;
+import org.playbox.ResourcePackServer;
 import org.playbox.instances.limbo.consts.LoginMessages;
 import org.playbox.resourcepack.Packs;
 import org.playbox.utils.InstanceEvent;
@@ -26,6 +27,6 @@ public class PlayerSpawn extends InstanceEvent<AddEntityToInstanceEvent> {
         // Player settings
         player.setAutoViewable(true);
         player.setGameMode(GameMode.ADVENTURE);
-        player.setResourcePack(ResourcePack.forced("http://localhost:25567", Packs.LOBBY.hash()));
+        player.setResourcePack(ResourcePack.forced(ResourcePackServer.DOWNLOAD_LINK, Packs.LOBBY.hash()));
     }
 }

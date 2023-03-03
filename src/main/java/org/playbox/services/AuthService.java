@@ -11,28 +11,54 @@ import org.playbox.HttpClient;
 import org.playbox.Server;
 import org.playbox.managers.PlayerManager;
 import org.playbox.services.auth.AuthorizeProfileBody;
+import org.playbox.services.auth.RegisterProfileBody;
 import org.playbox.utils.RequestBuilder;
 
 import javax.management.DescriptorKey;
 
 public class AuthService {
     public static boolean tryToAuthorizePlayer(Player player, String password) {
-         if (AuthService.tryToAuthorizePlayerByUsername(player.getUsername(), password)) {
-             // Updating PlayerManager
-             PlayerManager.getByUUID(player.getUuid()).setIsAuthorized(true);
+        boolean isAuthorized = AuthService.tryToAuthorizePlayerByUsername(player.getUsername(), password);
 
-             return true;
-         } else {
-             // Updating our PlayerManager
-             PlayerManager.getByUUID(player.getUuid()).setIsAuthorized(false);
-
-             return false;
-         }
+        PlayerManager.getByUUID(player.getUuid()).setIsAuthorized(isAuthorized);
+        return isAuthorized;
     };
 
-    // P.S.
-    // Try not to use this method very often.
-    public static boolean tryToAuthorizePlayerByUsername(String username, String password) {
+    public static boolean tryToRegisterPlayer(Player player, String password) {
+        boolean isRegistered = AuthService.tryToRegisterPlayerByUsername(player.getUsername(), password);
+
+        PlayerManager.getByUUID(player.getUuid()).setIsAuthorized(isRegistered);
+        PlayerManager.getByUUID(player.getUuid()).setIsRegistered(isRegistered);
+
+        return isRegistered;
+    };
+
+    private static boolean tryToRegisterPlayerByUsername(String username, String password) {
+        RegisterProfileBody body = new RegisterProfileBody()
+                .withUsername(username)
+                .withPassword(password);
+
+        Request request = new RequestBuilder()
+                .withEndpoint("/api/collections/users/records")
+                .withMethod(Method.POST)
+                .withBody(body.asString())
+                .asRequest();
+
+        try {
+            Response response = HttpClient.client.api(request);
+            JsonObject json = JsonParser.parseString(response.getBody()).getAsJsonObject();
+
+            if (json.has("id")) {
+                return true;
+            };
+        } catch(Throwable error) {
+            Server.LOGGER.warn(String.format("Error happened while making request %s: %s", request.toString(), error.toString()));
+        };
+
+        return false;
+    };
+
+    private static boolean tryToAuthorizePlayerByUsername(String username, String password) {
         AuthorizeProfileBody body = new AuthorizeProfileBody()
                 .withUsername(username)
                 .withPassword(password);
