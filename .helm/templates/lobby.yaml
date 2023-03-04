@@ -19,7 +19,7 @@ spec:
             - name: "VELOCITY_FORWARDING_SECRET"
               value: {{ $.Values.forwardingSecret }}
             - name: "RESOURCEPACK_DOWNLOAD_LINK"
-              value: https://resourcepack.lobby-{{ $i }}.playbox.k8s.odzi.dog
+              value: https://resourcepacks.playbox.network/lobby/instance-{{ $i }}
 
 ---
 apiVersion: v1
@@ -50,7 +50,7 @@ spec:
     - web
     - websecure
   routes:
-    - match: Host(`resourcepack.lobby-{{ $i }}.playbox.k8s.odzi.dog`)
+    - match: Host(`resourcepacks.playbox.network`) && Path(`/lobby/instance-{{ $i }}`)
       kind: Rule
       services:
         - name: lobby-{{ $i }}

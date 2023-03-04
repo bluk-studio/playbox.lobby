@@ -11,10 +11,10 @@ import team.unnamed.creative.font.FontProvider;
 import java.util.ArrayList;
 import java.util.Set;
 
-public class Font extends ResourcePackBit {
+public class Fonts extends ResourcePackBit {
     public void apply(FileTree tree) {
         // Applying textures
-        FONT_TEXTURES.forEach((fontTexture) -> {
+        LOBBY_FONT_TEXTURES.forEach((fontTexture) -> {
             tree.write(
                     fontTexture.getTexture()
             );
@@ -22,12 +22,12 @@ public class Font extends ResourcePackBit {
 
         // Applying pre-created font
         tree.write(
-                FONT
+                LOBBY
         );
     };
 
-    private static final ArrayList<FontTexture> FONT_TEXTURES;
-    public static team.unnamed.creative.font.Font FONT;
+    private static final ArrayList<FontTexture> LOBBY_FONT_TEXTURES;
+    public static team.unnamed.creative.font.Font LOBBY;
 
     static {
         ArrayList<FontTexture> fetchedTextures = new ArrayList<>();
@@ -54,12 +54,12 @@ public class Font extends ResourcePackBit {
             };
         });
 
-        FONT_TEXTURES = fetchedTextures;
+        LOBBY_FONT_TEXTURES = fetchedTextures;
 
         // Creating new font with this providers
-        FONT = team.unnamed.creative.font.Font.of(
+        LOBBY = team.unnamed.creative.font.Font.of(
                 Key.key("playbox", "font_textures"),
-                FONT_TEXTURES.stream().map(FontTexture::getProvider).toList()
+                LOBBY_FONT_TEXTURES.stream().map(FontTexture::getProvider).toList()
         );
     };
 }
