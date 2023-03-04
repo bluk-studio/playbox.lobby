@@ -12,10 +12,8 @@ import java.util.Set;
 public class ResourcePackUtils {
     public static Writable getResourceWritable(String resource) {
         try {
-            return Writable.file(new File(
-                    Server.class.getClassLoader().getResource(resource).toURI()
-            ));
-        } catch (URISyntaxException e) {
+            return Writable.file(new File(resource));
+        } catch (Throwable e) {
             throw new RuntimeException(e);
         }
     };

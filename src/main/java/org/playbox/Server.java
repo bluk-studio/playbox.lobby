@@ -25,6 +25,7 @@ public final class Server {
         // Trying to unzip our lobby map
         try {
             ResourceUtils.extractResource("world");
+            ResourceUtils.extractResource("textures");
         } catch(Throwable error) {
             throw new RuntimeException(error);
         }
