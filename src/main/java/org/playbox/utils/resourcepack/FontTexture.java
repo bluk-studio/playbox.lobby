@@ -27,18 +27,12 @@ public class FontTexture {
     @Getter()
     private static Character character;
 
-    public static List<Character> AVAILABLE_SYMBOLS;
-
-    static {
-        // 59 characters
-        String characters = "abcdefghijklmnopqrstuvwxyzабвгґдеєжзиіїйклмнопрстуфхцчшщьюя";
-        AVAILABLE_SYMBOLS = characters.chars().mapToObj(character -> (char) character).collect(Collectors.toList());;
-    };
+    public static Integer CURRENT_SYMBOL = 0;
 
     public static Character getNextAvailableSymbol() {
         // Getting (and then removing) first element of AVAILABLE_SYMBOLS list
-        Character symbol = FontTexture.AVAILABLE_SYMBOLS.get(0);
-        FontTexture.AVAILABLE_SYMBOLS.remove(0);
+        Character symbol = (char) (FontTexture.CURRENT_SYMBOL + 1);
+        FontTexture.CURRENT_SYMBOL++;
 
         return symbol;
     };
