@@ -1,4 +1,4 @@
-package org.playbox.resourcepack.bits.hotbar;
+package org.playbox.resourcepack.bits.badges;
 
 import lombok.Getter;
 import net.kyori.adventure.key.Key;
@@ -8,22 +8,23 @@ import org.playbox.utils.resourcepack.FontTexture;
 import team.unnamed.creative.font.FontProvider;
 import team.unnamed.creative.texture.Texture;
 
-public class MoreButton extends FontTexture {
+public class ModeratorBadge extends FontTexture {
     private static final Character character = FontTexture.getNextAvailableSymbol();
 
-    public MoreButton() {
-        this.withTexture(
+
+    public ModeratorBadge() {
+        withTexture(
                 Texture.builder()
-                        .key(Key.key("playbox", "gui/hotbar/more_button/active"))
-                        .data(ResourcePackUtils.getResourceWritable("textures/gui/hotbar/more_button/active.png"))
+                        .key(Key.key("playbox", "badges/moderator"))
+                        .data(ResourcePackUtils.getResourceWritable("textures/other/badges/moderator.png"))
                         .build()
         );
 
-        this.withProvider(
+        withProvider(
                 FontProvider.bitMap()
                         .characters(String.valueOf(character))
-                        .ascent(-35)
-                        .height(30)
+                        .ascent(7)
+                        .height(7)
         );
     };
 

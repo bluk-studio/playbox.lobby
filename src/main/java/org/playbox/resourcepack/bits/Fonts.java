@@ -1,6 +1,7 @@
 package org.playbox.resourcepack.bits;
 
 import net.kyori.adventure.key.Key;
+import net.minestom.server.MinecraftServer;
 import org.playbox.Server;
 import org.playbox.utils.ResourcePackBit;
 import org.playbox.utils.resourcepack.FontTexture;
@@ -50,7 +51,7 @@ public class Fonts extends ResourcePackBit {
                 Server.LOGGER.info(String.format("Applied resourcepack FontTexture %s", fontTextureClass.getName()));
             } catch(Throwable error) {
                 Server.LOGGER.warn(String.format("Could not load resourcepack FontTexture %s", fontTextureClass.getName()));
-                Server.LOGGER.error(String.format("Message: %s, stacktrace: %s", error.getMessage(), error.getStackTrace().toString()));
+                Server.LOGGER.error("Error:", error);
             };
         });
 

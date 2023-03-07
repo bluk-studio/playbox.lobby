@@ -26,12 +26,12 @@ public class Login extends Command {
         var passwordArgument = ArgumentType.String("password");
         addSyntax((sender, context) -> {
             if (!(sender instanceof Player player)) return;
-            if (!this.isInLimbo(player)) return;
+            if (!isInLimbo(player)) return;
 
             final String password = context.get(passwordArgument);
 
             // Checking if this player is registered
-            if (!PlayerManager.getByUUID(player.getUuid()).isRegistered) {
+            if (!PlayerManager.getByUUID(player.getUuid()).getIsRegistered()) {
                 // Getting current player message, because it either could be LoginMessages.REPEATABLE_MESSAGE
                 // or RegisterMessages.REPEATABLE_MESSAGE
                 RepeatableMessageManager.setMessage(player, LoginMessages.NOT_REGISTERED, RepeatableMessageManager.getPlayersCurrentMessage(player));

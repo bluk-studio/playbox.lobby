@@ -48,9 +48,9 @@ public class AuthService {
             Response response = HttpClient.client.api(request);
             JsonObject json = JsonParser.parseString(response.getBody()).getAsJsonObject();
 
-            if (json.has("id")) {
-                return true;
-            };
+            // Trying to deserialize our body to update our ManagedPlayer
+            // We're going to get these fields from our profile information:
+            // - role
         } catch(Throwable error) {
             Server.LOGGER.warn(String.format("Error happened while making request %s: %s", request.toString(), error.toString()));
         };

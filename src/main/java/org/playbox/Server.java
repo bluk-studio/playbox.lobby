@@ -7,6 +7,7 @@ import net.minestom.server.event.GlobalEventHandler;
 import net.minestom.server.event.player.PlayerLoginEvent;
 import net.minestom.server.extras.velocity.VelocityProxy;
 import org.playbox.instances.Limbo;
+import org.playbox.instances.limbo.consts.LoginMessages;
 import org.playbox.managers.PlayerManager;
 import org.playbox.utils.CommandUtils;
 import org.playbox.utils.ResourceUtils;
@@ -14,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 public final class Server {
     public static final Logger LOGGER = LoggerFactory.getLogger(Server.class);
@@ -27,7 +29,7 @@ public final class Server {
             ResourceUtils.extractResource("world");
         } catch(Throwable error) {
             throw new RuntimeException(error);
-        }
+        };
 
         // Configuring our server
         if (System.getenv().containsKey("VELOCITY_FORWARDING_SECRET")) {

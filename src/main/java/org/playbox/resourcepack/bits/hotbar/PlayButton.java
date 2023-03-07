@@ -1,14 +1,16 @@
 package org.playbox.resourcepack.bits.hotbar;
 
+import lombok.Getter;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.text.Component;
-import org.playbox.resourcepack.bits.Fonts;
 import org.playbox.utils.ResourcePackUtils;
 import org.playbox.utils.resourcepack.FontTexture;
 import team.unnamed.creative.font.FontProvider;
 import team.unnamed.creative.texture.Texture;
 
 public class PlayButton extends FontTexture {
+    private static final Character character = FontTexture.getNextAvailableSymbol();
+
     public PlayButton() {
         this.withTexture(
                 Texture.builder()
@@ -19,12 +21,13 @@ public class PlayButton extends FontTexture {
 
         this.withProvider(
                 FontProvider.bitMap()
+                        .characters(String.valueOf(character))
                         .ascent(-35)
                         .height(30)
         );
     };
 
     public static Component asTextComponent() {
-        return FontTexture.asTextComponentWrapper(PlayButton.class);
+        return asTextComponentWrapper(character);
     };
 }
