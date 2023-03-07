@@ -3,6 +3,8 @@ package org.playbox.managers.player;
 import lombok.Getter;
 import lombok.Setter;
 import net.minestom.server.entity.Player;
+import org.playbox.Server;
+import org.playbox.services.auth.responses.ProfileResponse;
 
 public class ManagedPlayer {
     @Getter()
@@ -22,5 +24,10 @@ public class ManagedPlayer {
 
     public ManagedPlayer(Player player) {
         this.player = player;
+    };
+
+    public void handleProfileResponse(ProfileResponse profile) {
+        // Updating our managed fields
+        this.role = profile.getRole();
     };
 }
