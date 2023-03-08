@@ -24,7 +24,7 @@ import java.util.*;
 public class HotbarButtonsManager {
     public static Map<UUID, ManagedPlayer> players = new HashMap<>();
 
-    private static ManagedPlayer getManagedPlayer(Player player) {
+    public static ManagedPlayer getManagedPlayer(Player player) {
         // Checking if we have this player in our storage
         if (players.get(player.getUuid()) != null) return players.get(player.getUuid());
 

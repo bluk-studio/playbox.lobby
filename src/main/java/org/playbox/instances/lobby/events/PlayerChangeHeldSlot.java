@@ -12,7 +12,7 @@ public class PlayerChangeHeldSlot extends InstanceEvent<PlayerChangeHeldSlotEven
 
     public void handle(PlayerChangeHeldSlotEvent event) {
         Player player = event.getPlayer();
-        HotbarButtonsManager.ManagedPlayer managedPlayer = HotbarButtonsManager.players.get(player.getUuid());
+        HotbarButtonsManager.ManagedPlayer managedPlayer = HotbarButtonsManager.getManagedPlayer(player);
 
         if (event.getSlot() >= managedPlayer.availableButtons.size()) {
             event.setCancelled(true);
