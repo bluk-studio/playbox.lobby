@@ -53,4 +53,6 @@ public class FontTexture {
                 .font(Fonts.LOBBY.key())
                 .build();
     };
+
+    public static Component asTextComponent() { return Component.empty(); };
 }

@@ -1,5 +1,7 @@
 package org.playbox.instances.limbo.managers;
 
+import lombok.Getter;
+import lombok.Setter;
 import net.kyori.adventure.text.Component;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.entity.Player;
@@ -8,7 +10,6 @@ import net.minestom.server.timer.Scheduler;
 import net.minestom.server.timer.Task;
 import net.minestom.server.timer.TaskSchedule;
 import org.playbox.instances.Limbo;
-import org.playbox.instances.limbo.managers.repeatablemanager.ManagedPlayer;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;
@@ -87,4 +88,25 @@ public class RepeatableMessageManager {
             managedPlayer.setNextMessage(null);
         };
     };
+
+    public static class ManagedPlayer {
+        @Getter()
+        private final Player player;
+
+        @Getter()
+        @Setter()
+        private @Nullable Component currentMessage;
+
+        @Getter()
+        @Setter()
+        private @Nullable Component nextMessage;
+
+        @Getter()
+        @Setter()
+        private @Nullable Task task;
+
+        public ManagedPlayer(Player player) {
+            this.player = player;
+        };
+    }
 }

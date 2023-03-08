@@ -33,4 +33,28 @@ public class AccountButton {
             return asTextComponentWrapper(character);
         };
     }
+
+    public static class Inactive extends FontTexture {
+        private static final Character character = FontTexture.getNextAvailableSymbol();
+
+        public Inactive() {
+            withTexture(
+                    Texture.builder()
+                            .key(Key.key("playbox", "gui/hotbar/account_button/inactive"))
+                            .data(ResourcePackUtils.getResourceWritable("textures/gui/hotbar/account_button/inactive.png"))
+                            .build()
+            );
+
+            withProvider(
+                    FontProvider.bitMap()
+                            .characters(String.valueOf(character))
+                            .ascent(-45)
+                            .height(20)
+            );
+        }
+
+        public static Component asTextComponent() {
+            return asTextComponentWrapper(character);
+        };
+    }
 }

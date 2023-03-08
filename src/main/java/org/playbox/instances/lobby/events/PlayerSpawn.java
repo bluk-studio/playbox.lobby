@@ -8,6 +8,7 @@ import net.minestom.server.event.instance.AddEntityToInstanceEvent;
 import net.minestom.server.resourcepack.ResourcePack;
 import org.playbox.ResourcePackServer;
 import org.playbox.instances.limbo.consts.LoginMessages;
+import org.playbox.instances.lobby.managers.HotbarButtonsManager;
 import org.playbox.resourcepack.Packs;
 import org.playbox.utils.InstanceEvent;
 
@@ -28,5 +29,9 @@ public class PlayerSpawn extends InstanceEvent<AddEntityToInstanceEvent> {
         player.setAutoViewable(true);
         player.setGameMode(GameMode.ADVENTURE);
         player.setResourcePack(ResourcePack.forced(ResourcePackServer.DOWNLOAD_LINK, Packs.LOBBY.hash()));
+
+        // Hotbar
+        player.setHeldItemSlot(Integer.valueOf(0).byteValue());
+        HotbarButtonsManager.setSelectedSlot(player, Integer.valueOf(0).byteValue());
     }
 }
