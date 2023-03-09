@@ -1,5 +1,6 @@
 package org.playbox.resourcepack;
 
+import org.playbox.services.ResourcesDownloader;
 import org.playbox.utils.ResourcePackUtils;
 import org.playbox.utils.ResourceUtils;
 import team.unnamed.creative.ResourcePack;
@@ -15,8 +16,9 @@ public class Packs {
                         .build()
         );
 
+        // Trying to download up-to-date resources from assets.k8s.odzi.dog
         try {
-            ResourceUtils.extractResource("textures");
+            ResourcesDownloader.fromBucket("playbox-resourcepack-lobby", "textures/");
         } catch (Throwable error) {
             throw new RuntimeException(error);
         }
