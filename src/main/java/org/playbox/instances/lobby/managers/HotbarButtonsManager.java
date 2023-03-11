@@ -9,6 +9,7 @@ import net.minestom.server.entity.Player;
 import net.minestom.server.timer.Task;
 import net.minestom.server.timer.TaskSchedule;
 import org.playbox.instances.Lobby;
+import org.playbox.instances.lobby.menus.GamesMenu;
 import org.playbox.managers.PlayerManager;
 import org.playbox.managers.player.ManagedPlayer;
 import org.playbox.managers.player.PlayerRole;
@@ -37,6 +38,14 @@ public class HotbarButtonsManager {
     public static void setSelectedSlot(Player player, Byte slot) {
         ManagedPlayer managedPlayer = getManagedPlayer(player);
         managedPlayer.setCurrentlySelectedSlot(slot);
+    };
+
+    public static void handleInteraction(Player player, Byte interactedSlot) {
+        ManagedPlayer managedPlayer = getManagedPlayer(player);
+
+        switch (interactedSlot) {
+            case 0 -> GamesMenu.open(player);
+        };
     };
 
     public record ButtonEntry(Class<? extends FontTexture> activeTexture, Class<? extends FontTexture> inactiveTexture) {};
