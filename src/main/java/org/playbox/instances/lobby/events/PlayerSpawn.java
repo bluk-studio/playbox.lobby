@@ -5,6 +5,8 @@ import net.minestom.server.coordinate.Pos;
 import net.minestom.server.entity.GameMode;
 import net.minestom.server.entity.Player;
 import net.minestom.server.event.instance.AddEntityToInstanceEvent;
+import net.minestom.server.item.ItemStack;
+import net.minestom.server.item.Material;
 import net.minestom.server.resourcepack.ResourcePack;
 import org.playbox.ResourcePackServer;
 import org.playbox.instances.limbo.consts.LoginMessages;
@@ -29,6 +31,11 @@ public class PlayerSpawn extends InstanceEvent<AddEntityToInstanceEvent> {
         player.setAutoViewable(true);
         player.setGameMode(GameMode.ADVENTURE);
         player.setResourcePack(ResourcePack.forced(ResourcePackServer.DOWNLOAD_LINK, Packs.LOBBY.hash()));
+
+        player.setItemInOffHand(
+                ItemStack.builder(Material.PAPER)
+                        .build()
+        );
 
         // Hotbar
         player.setHeldItemSlot(Integer.valueOf(0).byteValue());
