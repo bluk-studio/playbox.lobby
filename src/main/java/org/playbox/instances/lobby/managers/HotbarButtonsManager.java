@@ -75,6 +75,10 @@ public class HotbarButtonsManager {
                 // Checking if our player still online
                 if (!player.isOnline() || player.getInstance() != Lobby.INSTANCE) {
                     getTask().cancel();
+
+                    // Removing this ManagedPlayer from our manager
+                    HotbarButtonsManager.players.remove(player.getUuid());
+
                     return;
                 };
 
