@@ -20,6 +20,7 @@ dependencies {
     implementation("team.unnamed:creative-server:0.3.0-SNAPSHOT")
     implementation("com.github.Minestom:Minestom:aebf72de90")
 
+    implementation("org.javatuples:javatuples:1.2")
     implementation("io.minio:minio:8.5.2")
 
     compileOnly("org.projectlombok:lombok:1.18.26")

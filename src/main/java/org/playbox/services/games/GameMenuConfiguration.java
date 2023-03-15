@@ -1,6 +1,7 @@
 package org.playbox.services.games;
 
 import lombok.Getter;
+import org.javatuples.Pair;
 import org.playbox.utils.resourcepack.FontTexture;
 
 public class GameMenuConfiguration {
@@ -19,7 +20,23 @@ public class GameMenuConfiguration {
     // generalize and move to utils
     public static enum ButtonDimension {
         THREE_TO_TWO,
-        THREE_TO_THREE
+        THREE_TO_THREE;
+
+        // (width, height)
+        public Pair<Integer, Integer> getDimensions() {
+            return switch (this) {
+                case THREE_TO_THREE -> new Pair<Integer, Integer>(3, 3);
+                case THREE_TO_TWO -> new Pair<Integer, Integer>(3, 2);
+            };
+        };
+
+        public int getHeight() {
+            return this.getDimensions().getValue0();
+        };
+
+        public int getWidth() {
+            return this.getDimensions().getValue1();
+        };
     }
 
     public static class Builder {
