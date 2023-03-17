@@ -1,16 +1,18 @@
 package org.playbox.instances.lobby.menus;
 
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
 import net.minestom.server.entity.Player;
 import net.minestom.server.inventory.Inventory;
 import net.minestom.server.inventory.InventoryType;
-import net.minestom.server.inventory.click.ClickType;
 import net.minestom.server.item.ItemStack;
 import net.minestom.server.item.Material;
 import org.javatuples.Pair;
+import org.playbox.resourcepack.bits.menus.GameMenuTexture;
 import org.playbox.services.GamesService;
 import org.playbox.services.games.Game;
 import org.playbox.services.games.GameMenuConfiguration;
+import org.playbox.utils.ResourcePackUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -99,28 +101,34 @@ public class GamesMenu {
         ArrayList<Integer> slots = new ArrayList<>(Collections.singletonList(startingSlot));
 
         switch (dimensions) {
-            case THREE_TO_TWO -> {
+            case FOUR_TO_TWO -> {
                 slots.addAll(Arrays.asList(
                         startingSlot + 1,
                         startingSlot + 2,
-                        startingSlot + 9,
-                        startingSlot + 10,
-                        startingSlot + 11
-                ));
-            }
-
-            case THREE_TO_THREE -> {
-                slots.addAll(Arrays.asList(
-                        startingSlot + 1,
-                        startingSlot + 2,
+                        startingSlot + 3,
 
                         startingSlot + 9,
                         startingSlot + 10,
                         startingSlot + 11,
+                        startingSlot + 12
+                ));
+            }
+
+            case FOUR_TO_THREE -> {
+                slots.addAll(Arrays.asList(
+                        startingSlot + 1,
+                        startingSlot + 2,
+                        startingSlot + 3,
+
+                        startingSlot + 9,
+                        startingSlot + 10,
+                        startingSlot + 11,
+                        startingSlot + 12,
 
                         startingSlot + 18,
                         startingSlot + 19,
-                        startingSlot + 20
+                        startingSlot + 20,
+                        startingSlot + 21
                 ));
             }
         };
@@ -129,7 +137,24 @@ public class GamesMenu {
     }
 
     private static void generateTitle(Inventory inventory) {
+        var textureBuilder = Component.text();
+        textureBuilder.append(GameMenuTexture.asTextComponentBuilder().color(TextColor.color(0xffffff)));
 
+        // Game textures
+        GamesService.GAMES.forEach(game -> {
+            GameMenuConfiguration menuConfiguration = game.getGameMenuConfiguration();
+
+            if (ResourcePackUtils.getFontTexture(menuConfiguration.getTexture()) != null) {
+                Component textureComponent = ResourcePackUtils.getFontTexture(menuConfiguration.getTexture());
+                assert textureComponent != null;
+
+                textureBuilder.append(textureComponent);
+            };
+        });
+
+        // Controls textures
+
+        inventory.setTitle(textureBuilder.build());
     }
 
     // Events

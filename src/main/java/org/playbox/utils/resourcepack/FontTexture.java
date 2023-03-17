@@ -2,18 +2,12 @@ package org.playbox.utils.resourcepack;
 
 import lombok.Getter;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.TextComponent;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.playbox.Server;
 import org.playbox.resourcepack.bits.Fonts;
 import team.unnamed.creative.font.BitMapFontProvider;
 import team.unnamed.creative.font.FontProvider;
 import team.unnamed.creative.texture.Texture;
-
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.util.*;
-import java.util.stream.Collectors;
 
 public class FontTexture {
     @Getter()
@@ -48,10 +42,14 @@ public class FontTexture {
     };
 
     public static Component asTextComponentWrapper(Character character) {
+        return asTextComponentBuilderWrapper(character)
+                .build();
+    };
+
+    public static TextComponent.Builder asTextComponentBuilderWrapper(Character character) {
         return Component.text()
                 .content(String.valueOf(character))
-                .font(Fonts.LOBBY.key())
-                .build();
+                .font(Fonts.DEFAULT.key());
     };
 
     public static Component asTextComponent() { return Component.empty(); };

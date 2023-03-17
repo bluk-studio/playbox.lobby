@@ -19,14 +19,14 @@ public class GameMenuConfiguration {
     // todo
     // generalize and move to utils
     public static enum ButtonDimension {
-        THREE_TO_TWO,
-        THREE_TO_THREE;
+        FOUR_TO_TWO,
+        FOUR_TO_THREE;
 
         // (width, height)
         public Pair<Integer, Integer> getDimensions() {
             return switch (this) {
-                case THREE_TO_THREE -> new Pair<Integer, Integer>(3, 3);
-                case THREE_TO_TWO -> new Pair<Integer, Integer>(3, 2);
+                case FOUR_TO_TWO -> new Pair<Integer, Integer>(4, 3);
+                case FOUR_TO_THREE -> new Pair<Integer, Integer>(4, 2);
             };
         };
 
@@ -41,7 +41,7 @@ public class GameMenuConfiguration {
 
     public static class Builder {
         private Class<? extends FontTexture> texture;
-        private ButtonDimension buttonDimension = ButtonDimension.THREE_TO_TWO;
+        private ButtonDimension buttonDimension = ButtonDimension.FOUR_TO_TWO;
 
         public Builder withTexture(Class<? extends FontTexture> texture) {
             this.texture = texture;

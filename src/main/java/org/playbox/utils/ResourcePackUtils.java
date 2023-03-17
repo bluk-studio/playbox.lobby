@@ -1,15 +1,30 @@
 package org.playbox.utils;
 
+import net.kyori.adventure.text.Component;
+import org.jetbrains.annotations.Nullable;
 import org.playbox.Server;
+import org.playbox.utils.resourcepack.FontTexture;
 import org.reflections.Reflections;
 import team.unnamed.creative.base.Writable;
 import team.unnamed.creative.file.FileTree;
 
 import java.io.File;
-import java.net.URISyntaxException;
+import java.lang.reflect.Method;
 import java.util.Set;
 
 public class ResourcePackUtils {
+    @Nullable
+    public static Component getFontTexture(Class<FontTexture> texture) {
+        try {
+            Method asTextComponent = texture.getMethod("asTextComponent");
+            return (Component) asTextComponent.invoke(null);
+        } catch(Throwable error) {
+            Server.LOGGER.error("Error while getting FontTexture component using reflections:", error);
+        };
+
+        return null;
+    };
+
     public static Writable getResourceWritable(String resource) {
         try {
             return Writable.file(new File(resource));

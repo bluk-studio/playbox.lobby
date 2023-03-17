@@ -1,9 +1,9 @@
 package org.playbox.services;
 
+import org.playbox.instances.lobby.menus.GamesMenu;
 import org.playbox.resourcepack.bits.menus.gamemenu.ParkourTagMenuTexture;
 import org.playbox.services.games.Game;
 import org.playbox.services.games.GameMenuConfiguration;
-import org.playbox.instances.lobby.menus.GamesMenu;
 
 import java.util.ArrayList;
 import java.util.List;
